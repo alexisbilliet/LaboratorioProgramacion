@@ -11,6 +11,7 @@ namespace ConsoleApp1
             {
                 Console.Write(cadena[i]);
             }
+            Console.WriteLine("");
             int numveces = numero * 2;
             for (int i = 0; i <= numveces; i++)
             {
@@ -49,13 +50,10 @@ namespace ConsoleApp1
             Console.WriteLine(cadena.Substring(cadena.Length - numero));
             Console.WriteLine(cadena.Substring(3, 1) + " " + cadena.Substring(9, 1) + " " + cadena.Substring(cadena.Length - 1));
             La6();
-            for (int i = 1; i <= cadena.Length; i++)
-            {
-                if (cadena[i] == cadena2)
-                {
-
-                }
-            }
+            Console.WriteLine("");
+            Console.WriteLine($"La Posicion de el Caracter en la Cadena 1 es: {cadena.IndexOf(cadena2) + 1}");
+            int x = (int)cadena[0];
+            Console.WriteLine(x);
 
 
 
