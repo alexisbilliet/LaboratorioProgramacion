@@ -27,3 +27,4 @@ namespace MyCompiler {
             Console.WriteLine($"Intervalo entre los dos instantes: {intervalo}");
         }
     }
+}
