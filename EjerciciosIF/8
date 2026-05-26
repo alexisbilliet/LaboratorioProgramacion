@@ -1,0 +1,12 @@
+using System;
+
+namespace MyCompiler {
+    class Program {
+        public static void Main(string[] args) {
+            Console.WriteLine("Ingrese el valor en grados Fahrenheit: ");
+            double gradosF = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine($"Grados Celsius: {(gradosF-32)*5/9}");
+            
+        }
+    }
+}
