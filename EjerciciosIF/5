@@ -1,0 +1,15 @@
+using System;
+
+namespace MyCompiler {
+    class Program {
+        public static void Main(string[] args) {
+            Console.WriteLine("Ingrese un numero en formato DDMMAA: ");
+            int x = Convert.ToInt32(Console.ReadLine());
+            int numero = x % 10000;
+            numero = numero / 100;
+             Console.WriteLine($"Fecha: {x}");
+            Console.WriteLine($"El mes seria: {numero}");
+            
+        }
+    }
+}
