@@ -1,0 +1,13 @@
+using System;
+
+namespace MyCompiler {
+    class Program {
+        public static void Main(string[] args) {
+            Console.WriteLine("Ingrese la longitud de un lado del cuadrado: ");
+            double x = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine($"Perimetro: {x * 4}");
+            Console.WriteLine($"Superficie: {x * x}");
+            
+        }
+    }
+}
