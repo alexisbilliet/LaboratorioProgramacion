@@ -1,0 +1,14 @@
+using System;
+
+namespace MyCompiler {
+    class Program {
+        public static void Main(string[] args) {
+            Console.WriteLine("Ingrese el valor por hora: ");
+            double valor = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Ingrese las horas trabajadas: ");
+            double horas = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine($"Sueldo: {valor * horas}");
+            
+        }
+    }
+}
