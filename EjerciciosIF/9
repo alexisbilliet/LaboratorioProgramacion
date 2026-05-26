@@ -1,0 +1,29 @@
+using System;
+
+namespace MyCompiler {
+    class Program {
+        public static void Main(string[] args) {
+            Console.WriteLine("Ingrese del primer instante: ");
+            Console.WriteLine("La hora: ");
+            int hora1 = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("Los minutos: ");
+            int minuto1 = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("Los segundos: ");
+            int segundo1 = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("Ingrese del segundo instante: ");
+            Console.WriteLine("La hora: ");
+            int hora2 = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("Los minutos: ");
+            int minuto2 = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("Los segundos: ");
+            int segundo2 = Convert.ToInt16(Console.ReadLine());
+            hora1 = hora1 *3600;
+            minuto1 = minuto1 * 60;
+            hora2 = hora2 *3600;
+            minuto2 = minuto2 * 60;
+            segundo1 = segundo1 + minuto1 + hora1;
+            segundo2 = segundo2 + minuto2 + hora2;
+            int intervalo = segundo1 - segundo2;
+            Console.WriteLine($"Intervalo entre los dos instantes: {intervalo}");
+        }
+    }
