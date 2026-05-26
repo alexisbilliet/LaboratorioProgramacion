@@ -1,0 +1,16 @@
+using System;
+
+namespace MyCompiler {
+    class Program {
+        public static void Main(string[] args) {
+            Console.WriteLine("Ingrese un numero: ");
+            int numero = Convert.ToInt16(Console.ReadLine());
+            int numeroD = numero / 10;
+            Console.WriteLine($"Decena: {numeroD}");
+            int numeroU = numero % 10;
+            Console.WriteLine($"Unidad: {numeroU}");
+            
+            
+        }
+    }
+}
