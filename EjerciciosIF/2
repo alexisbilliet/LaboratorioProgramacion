@@ -1,0 +1,17 @@
+using System;
+
+namespace MyCompiler {
+    class Program {
+        public static void Main(string[] args) {
+            Console.WriteLine("Ingrese un numero de 3 cifras : ");
+            int x = Convert.ToInt16(Console.ReadLine());
+            int numero = x / 10;
+            numero = numero % 10;
+            Console.WriteLine($"Valor: {x}");
+            Console.WriteLine($"Numero central:{numero}");
+            
+            
+            
+        }
+    }
+}
