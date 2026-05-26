@@ -7,6 +7,8 @@ namespace MyCompiler {
             int numero = Convert.ToInt16(Console.ReadLine());
             int numeroD = numero / 10;
             int numeroU = numero % 10;
+            Console.WriteLine($"Valor: {numero}");
+            Console.WriteLine("Valor Permutado:");
             Console.Write(numeroU);
             Console.WriteLine(numeroD);
             
