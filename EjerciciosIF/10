@@ -1,0 +1,21 @@
+using System;
+
+namespace MyCompiler {
+    class Program {
+        public static void Main(string[] args) {
+            Console.WriteLine("Ingrese un numero de 3 cifras: ");
+            int numero = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine($"Valor: {numero}");
+            int numeroC = numero / 100;
+            Console.WriteLine($"centena: {numeroC}");
+            int numeroD = numero / 10;
+            numeroD = numeroD % 10;
+            Console.WriteLine($"Decena:{numeroD}");
+            int numeroU = numero % 10;
+            Console.WriteLine($"Unidad: {numeroU}");
+
+            
+            
+        }
+    }
+}
