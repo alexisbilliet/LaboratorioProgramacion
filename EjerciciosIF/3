@@ -1,0 +1,19 @@
+using System;
+
+namespace MyCompiler {
+    class Program {
+        public static void Main(string[] args) {
+            Console.WriteLine("Ingrese el precio del producto: ");
+            double x = Convert.ToDouble(Console.ReadLine());
+            double xd = x * 0.18;
+            double xf = x - xd;
+            Console.WriteLine($"Precio: {x}");
+            Console.WriteLine($"Descuento: {xd}");
+            Console.WriteLine($"Precio con descuento: {xf}");
+            
+            
+            
+            
+        }
+    }
+}
