@@ -1,0 +1,251 @@
+using System;
+
+namespace MyCompiler
+{
+    class Program 
+    {
+        static void EjercicioA()
+        {
+         Random r = new Random();
+        
+         int secreto = r.Next(1, 11);
+        
+          int num;
+        
+          while (true)
+          {
+             Console.WriteLine("Ingrese un numero entre 1 y 10");
+             num = Convert.ToInt32(Console.ReadLine());
+        
+                if (num < secreto)
+                {
+                 Console.WriteLine("El numero es mayor");
+                }
+                else if (num > secreto)
+                {
+                   Console.WriteLine("El numero es menor");
+                 }
+               else
+                 {
+                 Console.WriteLine("Ganaste");
+                    break;
+                 }
+          }
+            
+         }
+         static void EjercicioB()
+        {
+         Console.WriteLine("Ingrese un numero");
+         int num = Convert.ToInt32(Console.ReadLine());
+        
+          for (int i = 1; i <= num; i++)
+          {
+              if (num % i == 0)
+             {
+                 Console.WriteLine(i);
+             }
+          }
+        }
+        static void EjercicioC()
+        {
+          int a = 0;
+          int b = 1;
+        
+          for (int i = 1; i <= 20; i++)
+          {
+             Console.WriteLine(a);
+        
+             int aux = a + b;
+             a = b;
+             b = aux;
+         }
+        }
+        static void EjercicioD()
+        {
+           Console.WriteLine("1-Suma");
+           Console.WriteLine("2-Resta");
+          Console.WriteLine("3-Multiplicacion");
+          Console.WriteLine("4-Division");
+        
+          int opcion = Convert.ToInt32(Console.ReadLine());
+        
+          Console.WriteLine("Ingrese el primer numero");
+          double num1 = Convert.ToDouble(Console.ReadLine());
+        
+           Console.WriteLine("Ingrese el segundo numero");
+          double num2 = Convert.ToDouble(Console.ReadLine());
+        
+          if (opcion == 1)
+          {
+              Console.WriteLine(num1 + num2);
+          }
+          else if (opcion == 2)
+          {
+             Console.WriteLine(num1 - num2);
+         }
+         else if (opcion == 3)
+          {
+           Console.WriteLine(num1 * num2);
+           }
+            else if (opcion == 4)
+            {
+                Console.WriteLine(num1 / num2);
+            }
+        }
+        static void EjercicioE()
+        {
+            Console.WriteLine("Ingrese un numero");
+            int num = Convert.ToInt32(Console.ReadLine());
+        
+            int factorial = 1;
+
+            for (int i = 1; i <= num; i++)
+            {
+                factorial = factorial * i;
+            }
+
+            Console.WriteLine(factorial);
+        }
+        static void EjercicioF()
+        {
+            int turno = 1;
+        
+            while (true)
+            {
+                Console.WriteLine("Ingrese un nombre o fin");
+                string nombre = Console.ReadLine();
+        
+                if (nombre == "fin")
+                {
+                    break;
+                }
+        
+                Console.WriteLine($"Turno  {turno}  :   {nombre}");
+        
+                turno++;
+            }
+        }
+        static void EjercicioG()
+        {
+            for (int i = 1; i <= 100; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    Console.Write($"-{i}");
+                }
+            }
+        }
+        static void EjercicioH()
+        {
+            string respuesta = "si";
+        
+            while (respuesta == "si")
+            {
+                Console.WriteLine("Ingrese grados Celsius");
+                double celsius = Convert.ToDouble(Console.ReadLine());
+        
+                double fahrenheit = celsius * 9 / 5 + 32;
+        
+                Console.WriteLine(fahrenheit);
+        
+                Console.WriteLine("Desea continuar? si/no");
+                respuesta = Console.ReadLine();
+            }
+        }
+        static void EjercicioI()
+        {
+            Console.WriteLine("Ingrese un numero");
+            int num = Convert.ToInt32(Console.ReadLine());
+        
+            int divisores = 0;
+        
+            for (int i = 1; i <= num; i++)
+            {
+                if (num % i == 0)
+                {
+                    divisores++;
+                }
+            }
+        
+            if (divisores == 2)
+           {
+                Console.WriteLine("Es primo");
+            }
+            else
+                {
+                Console.WriteLine("No es primo");
+            }
+        }
+        static void EjercicioJ()
+        {
+            string nombres = "";
+        
+            while (true)
+            {
+                Console.WriteLine("Ingrese un nombre o fin");
+                string nombre = Console.ReadLine();
+        
+                if (nombre.ToLower() == "fin")
+                {
+                    break;
+                }
+
+                nombres = nombres + nombre + ",";
+            }
+            Console.WriteLine("Hola");
+            Console.WriteLine(nombres);
+        }
+        static void EjercicioK()
+        {
+            string nombres = "";
+        
+            int contador = 0;
+        
+            while (true)
+            {
+                Console.WriteLine("Ingrese un nombre");
+                string nombre = Console.ReadLine();
+        
+                if (nombres.Contains(nombre))
+                {
+                    Console.WriteLine("Se ingresaron " + contador + " nombres antes del repetido");
+                    break;
+                }
+
+                nombres = nombres + nombre + ",";
+                contador++;
+            }
+        }
+        /////////////////////////////////////////////////////
+        public static void Main(string[] args) 
+        {
+          while (true)
+          {
+              Console.WriteLine("Ingrese el Ejercicio a probar:");
+              Console.WriteLine("A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R");
+              string x = Console.ReadLine();
+              if(x == "A")
+              EjercicioA();
+              if(x == "B") 
+              EjercicioB();
+              if(x == "C")
+              EjercicioC();
+              if(x == "D") 
+              EjercicioD();
+              if(x == "E") 
+              EjercicioE();
+              if(x == "F")
+              EjercicioF();
+              if(x == "G")
+              EjercicioG();
+              if(x == "H")
+              EjercicioH();
+              if(x == "I")
+              EjercicioI();
+              if(x == "J")
+              EjercicioJ();
+
+          }
+        }
+    }
+}
