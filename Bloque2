@@ -244,6 +244,8 @@ namespace MyCompiler
               EjercicioI();
               if(x == "J")
               EjercicioJ();
+              if(x == "K")
+              EjercicioK();
 
           }
         }
