@@ -248,46 +248,46 @@ namespace MyCompiler
         /////////////////////////////////////////////////////
         public static void Main(string[] args) 
         {
-          while (True)
+          while (true)
           {
               Console.WriteLine("Ingrese el Ejercicio a probar:");
-              Console.WriteLine("A-B-C-D-F-G-H-I-J-K-L-M-N-O-P-Q-R");
+              Console.WriteLine("A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R");
               string x = Console.ReadLine();
-              if(x = "A")
+              if(x == "A")
               EjercicioA();
-              if(x = "B")
+              if(x == "B")
               EjercicioB();
-              if(x = "C")
+              if(x == "C")
               EjercicioC();
-              if(x = "D")
+              if(x == "D")
               EjercicioD();
-              if(x = "E")
+              if(x == "E")
               EjercicioE();
-              if(x = "F")
+              if(x == "F")
               EjercicioF();
-              if(x = "G")
+              if(x == "G")
               EjercicioG();
-              if(x = "H")
+              if(x == "H")
               EjercicioH();
-              if(x = "I")
+              if(x == "I")
               EjercicioI();
-              if(x = "J")
+              if(x == "J")
               EjercicioJ();
-              if(x = "K")
+              if(x == "K")
               EjercicioK();
-              if(x = "L")
+              if(x == "L")
               EjercicioL();
-              if(x = "M")
+              if(x == "M")
               EjercicioM();
-              if(x = "N")
+              if(x == "N")
               EjercicioN();
-              if(x = "O")
+              if(x == "O")
               EjercicioO();
-              if(x = "P")
+              if(x == "P")
               EjercicioP();
-              if(x = "Q")
+              if(x == "Q")
               EjercicioQ();
-              if(x = "R")
+              if(x == "R")
               EjercicioR();
           }
         }
