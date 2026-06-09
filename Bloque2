@@ -216,6 +216,165 @@ namespace MyCompiler
                 contador++;
             }
         }
+        static void EjercicioL()
+        {
+            for (int i = 100; i <= 200; i++)
+            {
+                if (i  %  7 == 0 && i % 10 == 3)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        }
+        static void EjercicioM()
+        {
+            double total = 0;
+
+            int productos = 0;
+        
+            while (total <= 1000)
+            {
+                Console.WriteLine("Ingrese un precio");
+        
+                total = total + Convert.ToDouble(Console.ReadLine());
+        
+                productos = productos + 1;
+            }
+
+            Console.WriteLine($"Cantidad de productos: {productos}"  );
+        }
+        static void EjercicioN()
+        {
+            Console.WriteLine("Ingrese nombre");
+            string nombre = Console.ReadLine();
+        
+            Console.WriteLine("Ingrese edad");
+            int edad = Convert.ToInt32(Console.ReadLine());
+        
+            Console.WriteLine("Ingrese mail");
+            string mail = Console.ReadLine();
+        
+            if (mail.Contains("@"))
+            {
+                Console.WriteLine("Datos validos");
+            }
+            else
+            {
+                Console.WriteLine("Mail invalido");
+            }
+        }
+        static void EjercicioO()
+        {
+            int num;
+            do
+            {
+             Console.WriteLine("Ingrese un numero de 3 cifras");
+              num = Convert.ToInt32(Console.ReadLine());
+            }
+            while(num > 999);
+        
+            int ultimo = num % 10;
+            int primero = num / 100;
+        
+            int aux = num % 100;
+            int medio = aux / 10;
+
+            Console.WriteLine(primero);
+            Console.WriteLine(medio);
+            Console.WriteLine(ultimo);
+        }
+        static void EjercicioP()
+        {
+            Random r = new Random();
+        
+            int usuario = 0;
+            int computadora = 0;
+        
+            for (int i = 1; i <= 3; i++)
+            {
+                Console.WriteLine("1-Piedra");
+                Console.WriteLine("2-Papel");
+                Console.WriteLine("3-Tijera");
+        
+                int jugada = Convert.ToInt32(Console.ReadLine());
+        
+                int pc = r.Next(1, 4);
+        
+                if (jugada == 1 && pc == 3 || jugada == 2 && pc == 1 || jugada == 3 && pc == 2)
+                {
+                    usuario++;
+                    Console.WriteLine("Ganaste");
+                }
+                else if (jugada != pc)
+                {
+                    computadora =computadora + 1;
+                    Console.WriteLine("Perdiste");
+                }
+            }
+
+            Console.WriteLine($"Usuario:{usuario} ");
+            Console.WriteLine($"Computadora:{computadora}"  );
+        }
+        static void EjercicioQ()
+        {
+            Random r = new Random();
+        
+            int contador = 0;
+        
+            for (int i = 1; i <= 10; i++)
+            {
+                int num = r.Next(1, 101);
+        
+                Console.WriteLine(num);
+        
+                if (num > 50)
+                {
+                    contador=contador + 1;
+                }
+            }
+        
+            Console.WriteLine($"Mayores a 50: {contador} "  );
+        }
+        static void EjercicioR()
+        {
+            string mejorNombre = "";
+        
+            double mejorNota = 0;
+        
+            double suma = 0;
+        
+            for (int i = 1; i <= 5; i++)
+            {
+                Console.WriteLine("Ingrese nombre");
+                string nombre = Console.ReadLine();
+        
+                Console.WriteLine("Ingrese nota");
+                double nota = Convert.ToDouble(Console.ReadLine());
+        
+                suma = suma + nota;
+        
+                if (nota > mejorNota)
+                {
+                    mejorNota = nota;
+                    mejorNombre = nombre;
+                }
+            }
+        
+            Console.WriteLine($"Promedio: {(suma / 5)}"  );
+            Console.WriteLine($"Mejor alumno: {mejorNombre} "  );
+        }
+        static void EjercicioS()
+        {
+            string abecedario = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+        
+            int i = abecedario.Length - 1;
+        
+            while (i >= 0)
+            {
+                Console.WriteLine(abecedario.Substring(i, 1));
+                i = i - 1;
+            }
+        }
         /////////////////////////////////////////////////////
         public static void Main(string[] args) 
         {
@@ -246,7 +405,22 @@ namespace MyCompiler
               EjercicioJ();
               if(x == "K")
               EjercicioK();
-
+              if(x == "L")
+              EjercicioL();
+              if(x == "M")
+              EjercicioM();
+              if(x == "N")
+              EjercicioN();
+              if(x == "O")
+              EjercicioO();
+              if(x == "P")
+              EjercicioP();
+              if(x == "Q")
+              EjercicioQ();
+              if(x == "R")
+              EjercicioR();
+              if(x == "S")
+              EjercicioS();
           }
         }
     }
