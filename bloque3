@@ -263,8 +263,8 @@ namespace MyCompiler
         }
         static void EjercicioJ()
         {
-            string usuario = "admin";
-            string clave = "1234";
+            string usuario = "hola";
+            string clave = "6798";
         
             int intentos = 0;
         
@@ -283,6 +283,114 @@ namespace MyCompiler
                 }
         
                 intentos++;
+            }
+        }
+        static void EjercicioK()
+        {
+            Console.WriteLine("Ingrese un numero");
+            int num = Convert.ToInt32(Console.ReadLine());
+        
+            if (num >= 0 && num <= 25)
+            {
+                Console.WriteLine("Rango 0-25");
+            }
+            else if (num <= 50)
+            {
+                Console.WriteLine("Rango 26-50");
+            }
+            else if (num <= 75)
+            {
+                Console.WriteLine("Rango 51-75");
+            }
+            else if (num <= 100)
+            {
+                Console.WriteLine("Rango 76-100");
+            }
+        }
+        static void EjercicioL()
+        {
+            Console.WriteLine("Ingrese su peso en kg");
+            double peso = Convert.ToDouble(Console.ReadLine());
+        
+            Console.WriteLine("Ingrese su altura en metros");
+            double altura = Convert.ToDouble(Console.ReadLine());
+        
+            double imc = peso / (altura * altura);
+        
+            Console.WriteLine($"Su IMC es {imc}");
+        
+            if (imc < 18.5)
+            {
+                Console.WriteLine("Bajo peso");
+            }
+            else if (imc < 25)
+            {
+                Console.WriteLine("Peso normal");
+            }
+            else if (imc < 30)
+            {
+                Console.WriteLine("Sobrepeso");
+            }
+            else
+            {
+                Console.WriteLine("Obesidad");
+            }
+        }
+        static void EjercicioM()
+        {
+            Console.WriteLine("Ingrese una palabra");
+            string palabra = Console.ReadLine();
+        
+            for (int i = 1; i <= palabra.Length; i++)
+            {
+                Console.WriteLine(palabra.Substring(0, i));
+            }
+        }
+        static void EjercicioN()
+        {
+            while (true)
+            {
+                Console.WriteLine("Ingrese una frase");
+                string frase = Console.ReadLine().ToLower();
+        
+                if (frase == "agusfortnite2008")
+                {
+                    break;
+                }
+        
+                string a = "";
+                string e = "";
+                string i = "";
+                string o = "";
+                string u = "";
+        
+                for (int x = 0; x < frase.Length; x++)
+                {
+                    string letra = frase.Substring(x, 1);
+        
+                    if (letra == "a" || letra == "e" || letra == "i" || letra == "o" || letra == "u")
+                    {
+                        a = a + "a";
+                        e = e + "e";
+                        i = i + "i";
+                        o = o + "o";
+                        u = u + "u";
+                    }
+                    else
+                    {
+                        a = a + letra;
+                        e = e + letra;
+                        i = i + letra;
+                        o = o + letra;
+                        u = u + letra;
+                    }
+                }
+
+                Console.WriteLine(a);
+                Console.WriteLine(e);
+                Console.WriteLine(i);
+                Console.WriteLine(o);
+                Console.WriteLine(u);
             }
         }
         /////////////////////////////////////////////////////
@@ -313,6 +421,14 @@ namespace MyCompiler
               EjercicioI();
               if(x == "J")
               EjercicioJ();
+              if(x == "K")
+              EjercicioK();
+              if(x == "L")
+              EjercicioL();
+              if(x == "M")
+              EjercicioM();
+              if(x == "N")
+              EjercicioN();
           }
         }
     }
