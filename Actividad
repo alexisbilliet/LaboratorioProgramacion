@@ -237,19 +237,25 @@ namespace TP
         }
         public static void Ejercicio11()
         {
-            Console.Write("Ingrese una edad: ");
-            int edad = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                Console.Write("Ingrese una edad: ");
+                int edad = Convert.ToInt32(Console.ReadLine());
         
-            if (edad >= 1 && edad <= 120)
-            {
-                Console.WriteLine("Edad valida.");
+                if (edad >= 1 && edad <= 120)
+                {
+                    Console.WriteLine("Edad valida.");
+                }
+                else
+                {
+                    Console.WriteLine("La edad debe estar entre 1 y 120.");
+                }
             }
-            else
+            catch (FormatException)
             {
-                Console.WriteLine("La edad debe estar entre 1 y 120.");
+                Console.WriteLine("Debe ingresar un numero.");
             }
         }
-        
         public static void Ejercicio12()
         {
             try
@@ -281,12 +287,15 @@ namespace TP
                     Console.WriteLine($"Resultado: {suma}");
                 }
             }
+            catch (FormatException)
+            {
+                Console.WriteLine("Debe ingresar un numero.");
+            }
             catch (OverflowException)
             {
                 Console.WriteLine("Se produjo un overflow.");
             }
         }
-        
         public static void Ejercicio14()
         {
             try
@@ -333,10 +342,6 @@ namespace TP
             catch (DivideByZeroException)
             {
                 Console.WriteLine("No se puede dividir por cero.");
-            }
-            catch (ArgumentException)
-            {
-                Console.WriteLine("Argumento inválido.");
             }
         }
     }
