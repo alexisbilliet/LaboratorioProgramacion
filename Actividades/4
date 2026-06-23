@@ -1,0 +1,33 @@
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        double[] Notas = new double[5];
+        Console.WriteLine("Ingrese 5 Notas: ");
+        double suma = 0;
+        for(int i = 0; i < 5; i++)
+        {
+           do
+           {
+            Console.WriteLine($"Nota:{i + 1}: ");
+            Notas[i] = Convert.ToInt16(Console.ReadLine());
+           }
+           while(Notas[i] > 10);
+            suma = suma + Notas[i];
+        }; 
+        double Promedio = suma / 5;
+        if(Promedio > 6)
+        {
+        Console.WriteLine("Aprobado");
+        Console.WriteLine($"Promedio: {Promedio}");
+        }
+        else
+        {
+        Console.WriteLine("Desaprobado");
+        Console.WriteLine($"Promedio: {Promedio}");
+        }
+    }
+}
