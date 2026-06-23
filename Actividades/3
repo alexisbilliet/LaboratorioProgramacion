@@ -1,0 +1,25 @@
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        string[] ciudades  = {"Madrid", "Buenos Aires", "Bogota", "Lima", "Santiago"};
+        ciudades  = new string[5];
+        Console.WriteLine("Ingrese la ciudad a buscar: ");
+        string buscar = Console.ReadLine();
+        bool esta = false;
+        for(int i = 0; i < 5; i++)
+        {
+            if(buscar == ciudades[i])
+            {
+                Console.WriteLine("Se encotro la ciudad buscada");
+                Console.WriteLine($"Posicion: {i}");
+                esta = true;
+                break;
+            };
+        };
+        if(esta = false)
+        Console.WriteLine("No se encontro la ciudad");
+    }
+}
