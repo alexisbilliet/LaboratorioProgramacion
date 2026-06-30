@@ -6,6 +6,7 @@ namespace Ejercicio
     {
         static void Main(string[] args)
         {
+            double p = 0;
             Console.Write("Ingrese una hora: ");
             int hora = Convert.ToInt32(Console.ReadLine);
             Console.Write("Ingrese un minuto: ");
@@ -18,18 +19,19 @@ namespace Ejercicio
             if (x == 1)
             {
                 segundo = hora * 3600 + minuto * 60 + segundo;
+                Console.WriteLine($"Los valores pasado a segundos serian: {segundo} segundos");
             }
             else if (x == 2)
             {
-                minuto = hora * 60 + minuto + segundo / 60;
+                p = hora * 60 + minuto + segundo / 60;
+                Console.WriteLine($"Los valores pasado a minutos serian: {p} minutos");
             }
             else
             {
-                hora = hora + minuto / 60 + segundo / 3600;
+                p = hora + minuto / 60 + segundo / 3600;
+                Console.WriteLine($"Los valores pasado a horas serian: {p} horas");
             }
 
         }
     }
 }
-
-
