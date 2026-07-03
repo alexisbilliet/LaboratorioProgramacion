@@ -1,0 +1,29 @@
+using System.Runtime.Intrinsics.Arm;
+
+namespace Ejercicio
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double[] TP = new double[30];
+            double[] Menos2 = new double[30];
+            for (int i = 0; i < 30; i++)
+            {
+                double suma = 0; 
+                int x = 1;
+                Console.WriteLine($"Ingrese la Nota del TP del alumno{i}");
+                TP[i] = Convert.ToDouble(Console.ReadLine());
+                while (true)
+                {
+                    
+                    Console.WriteLine($"Ingrese la Nota {x}: ");
+                    double Y = Convert.ToDouble(Console.ReadLine());
+                    suma = suma + Y;
+                }
+                suma = suma + TP[i];
+
+            }
+        }
+    }
+}
