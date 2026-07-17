@@ -6,23 +6,41 @@ namespace Ejercicio
     {
         static void Main(string[] args)
         {
-            double[] TP = new double[30];
-            double[] Menos2 = new double[30];
-            for (int i = 0; i < 30; i++)
+            double TP = 0;
+            double Y;
+            double[] Promedios = new double[50];
+            int Contador = 0;
+            double mayor = 0;
+            int aux = 0;
+            for (int i = 0; i < 50; i++)
             {
-                double suma = 0; 
-                int x = 1;
-                Console.WriteLine($"Ingrese la Nota del TP del alumno{i}");
-                TP[i] = Convert.ToDouble(Console.ReadLine());
+                double suma = 0;
+                int x = 0;
+                do
+                {
+                    Console.WriteLine($"Ingrese la Nota del TP del alumno{i}");
+                    TP = Convert.ToDouble(Console.ReadLine());
+                } while (TP < 0 || TP > 10);
+                if (TP >= 6)
+                    Contador++;
+                Console.WriteLine("(Ingrese un Valor Negativo Para Salir)");
                 while (true)
                 {
-                    
-                    Console.WriteLine($"Ingrese la Nota {x}: ");
-                    double Y = Convert.ToDouble(Console.ReadLine());
+                    x++;
+                    do
+                    {
+                        Console.WriteLine($"Ingrese la Nota {x + 1}: ");
+                        Y = Convert.ToDouble(Console.ReadLine());
+                    } while (Y > 10);
+                    if (Y < 0)
+                        break;
                     suma = suma + Y;
                 }
-                suma = suma + TP[i];
-
+                suma = suma + TP;
+            }
+            for (int i = 0; i < 50; i++)
+            {
+                Console.WriteLine($"Promedio de el Alumno {i+1}:  ");
             }
         }
     }
