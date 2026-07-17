@@ -17,7 +17,7 @@ class Program
             Vector[i] = Convert.ToInt32(Console.ReadLine());
 
             Suma += Vector[i];
-            Producto *= Vector[i];
+            Producto = Producto * Vector[i];
         }
 
         Promedio = Suma / 10;
