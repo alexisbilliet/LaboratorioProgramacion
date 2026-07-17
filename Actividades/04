@@ -10,8 +10,11 @@ class Program
 
         for (int i = 0; i < Notas.Length; i++)
         {
-            Console.Write($"Ingrese la nota del alumno {i + 1}: ");
-            Notas[i] = Convert.ToDouble(Console.ReadLine());
+            do
+            {
+                Console.Write($"Ingrese la nota del alumno {i + 1}(1 - 10): ");
+                Notas[i] = Convert.ToDouble(Console.ReadLine());
+            } while (Notas[i] > 10 || Notas[i] < 0);
 
             Suma += Notas[i];
         }
