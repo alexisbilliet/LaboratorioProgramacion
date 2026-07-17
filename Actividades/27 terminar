@@ -14,13 +14,13 @@ namespace Ejercicio
             int aux = 0;
             double suma1 = 0;
             int Contador2 = 0;
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 50; i++)
             {
                 double suma = 0;
                 int x = 0;
                 do
                 {
-                    Console.WriteLine($"Ingrese la Nota del TP del alumno {i}: ");
+                    Console.WriteLine($"Ingrese la Nota del TP del alumno {i+1}: ");
                     TP = Convert.ToDouble(Console.ReadLine());
                 } while (TP < 0 || TP > 10);
                 if (TP >= 6)
@@ -43,7 +43,7 @@ namespace Ejercicio
                 suma = suma + TP;
                 Promedios[i] = suma / x;
             }
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 50; i++)
             {
                 suma1 += Promedios[i];
                 if(mayor < Promedios[i])
@@ -54,7 +54,7 @@ namespace Ejercicio
                 Console.WriteLine($"Promedio de el Alumno {i + 1}:{Promedios[i]}  ");
             }
             Console.WriteLine($"Alumno con mayor Promedio: {aux+1}, con {mayor}");
-            Console.WriteLine($"Promedio general del curso: {suma1 / 2}");
+            Console.WriteLine($"Promedio general del curso: {suma1 / 50}");
             Console.WriteLine($"Cantidad de Alumnos con menos de 2 Notas: {Contador2}");
             Console.WriteLine($"Cantidad de Alumnos que aprobaron el TP: {Contador}");
         }
