@@ -9,11 +9,11 @@ class Program
         int MayorVenta = 0;
         int VendedorMayor = 0;
 
-        for (int vendedor = 1; vendedor <= 20; vendedor++)
+        for (int i = 1; i <= 20; i++)
         {
-            for (int dia = 1; dia <= 15; dia++)
+            for (int x = 1; x <= 15; x++)
             {
-                Console.Write($"Ingrese las ventas del vendedor {vendedor} del dia {dia}: ");
+                Console.Write($"Ingrese las ventas del vendedor {i} del dia {x}: ");
                 Venta = Convert.ToInt32(Console.ReadLine());
 
                 TotalVentas += Venta;
@@ -21,12 +21,12 @@ class Program
                 if (Venta > MayorVenta)
                 {
                     MayorVenta = Venta;
-                    VendedorMayor = vendedor;
+                    VendedorMayor = i;
                 }
             }
         }
 
-        Console.WriteLine($"\nTotal de unidades vendidas: {TotalVentas}");
+        Console.WriteLine($"Total de unidades vendidas: {TotalVentas}");
         Console.WriteLine($"El vendedor con la mayor venta diaria fue el vendedor {VendedorMayor}.");
         Console.WriteLine($"La mayor venta diaria fue de {MayorVenta} unidades.");
     }
