@@ -1,5 +1,4 @@
 using System;
-//ingresar un arreglo de 5 posiciones y ordenarlo de menor a mayor
 namespace ordenamiento
 {
     internal class Program
