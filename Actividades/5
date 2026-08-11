@@ -4,9 +4,9 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            double[,] Matriz = new double[3, 4];
+            double[,] Matriz = new double[100, 4];
             double suma = 0;
-            for(int Alu = 0; Alu < 3; Alu++)
+            for(int Alu = 0; Alu < 100; Alu++)
             {
                 Console.WriteLine("Alumno: "+Alu);
                 for (int col = 0; col < 3; col++)
@@ -67,7 +67,7 @@ namespace ConsoleApp1
                 }
                     
             }
-            for (int Alu = 0; Alu < 3; Alu++)
+            for (int Alu = 0; Alu < 100; Alu++)
             {
                 suma = 0;
                 for (int col = 0; col < 4; col++)
@@ -77,7 +77,7 @@ namespace ConsoleApp1
                 Matriz[Alu,3] = suma / 3;
             }
             Console.WriteLine("-----------------------------------------------");
-            for (int Alu = 0; Alu < 3; Alu++)
+            for (int Alu = 0; Alu < 100; Alu++)
             {
                 Console.Write("Alumno "+Alu+"  ");
                 for (int col = 0; col < 4; col++)
