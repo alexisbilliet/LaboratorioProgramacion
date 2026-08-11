@@ -6,18 +6,18 @@ namespace ConsoleApp1
         {
             double[,] Matriz = new double[100, 4];
             double suma = 0;
-            for(int Alu = 0; Alu < 100; Alu++)
+            for (int Alu = 0; Alu < 100; Alu++)
             {
-                Console.WriteLine("Alumno: "+Alu);
+                Console.WriteLine("Alumno: " + Alu);
                 for (int col = 0; col < 3; col++)
                 {
                     do
                     {
-                        Console.WriteLine("Ingrese La nota del Trimestre " + col+": ");
+                        Console.WriteLine("Ingrese La nota del Trimestre " + col + ": ");
                         Matriz[Alu, col] = double.Parse(Console.ReadLine());
                     } while (Matriz[Alu, col] < 0 || Matriz[Alu, col] > 10);
                 }
-                
+
             }
             Console.Clear();
             while (true)
@@ -34,17 +34,17 @@ namespace ConsoleApp1
                     {
                         Console.WriteLine("Ingrese El N° de Legajo: ");
                         Alu = int.Parse(Console.ReadLine());
-                    } while(Alu > 101);
+                    } while (Alu > 100 || Alu < 0);
                     do
                     {
                         Console.WriteLine("Ingrese El N° de Trimestre: ");
                         col = int.Parse(Console.ReadLine());
-                    } while (col > 3);
+                    } while (col > 3 || col < 0);
                     Console.WriteLine("------------------------------------");
-                    Console.WriteLine("La nota de ese Alumno es de: " + Matriz[Alu,col]);
+                    Console.WriteLine("La nota de ese Alumno es de: " + Matriz[Alu, col]);
                     Console.WriteLine("¿Desea Modificarla?");
                     string y = Console.ReadLine();
-                    y=y.ToUpper();
+                    y = y.ToUpper();
                     if (y == "SI")
                     {
                         do
@@ -58,14 +58,14 @@ namespace ConsoleApp1
                         Console.WriteLine("La nota no sera modificada");
                         break;
                     }
-                        
+
                 }
                 else
                 {
                     Console.WriteLine("Las notas no seran modificadas");
                     break;
                 }
-                    
+
             }
             for (int Alu = 0; Alu < 100; Alu++)
             {
@@ -74,15 +74,15 @@ namespace ConsoleApp1
                 {
                     suma = suma + Matriz[Alu, col];
                 }
-                Matriz[Alu,3] = suma / 3;
+                Matriz[Alu, 3] = suma / 3;
             }
             Console.WriteLine("-----------------------------------------------");
             for (int Alu = 0; Alu < 100; Alu++)
             {
-                Console.Write("Alumno "+Alu+"  ");
+                Console.Write("Alumno " + Alu + "  ");
                 for (int col = 0; col < 4; col++)
                 {
-                    Console.Write(Matriz[Alu,col]+" ");
+                    Console.Write(Matriz[Alu, col] + " ");
                 }
                 Console.WriteLine("");
             }
