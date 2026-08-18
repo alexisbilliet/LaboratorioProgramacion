@@ -5,13 +5,16 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
+            int posi = 0;
+            int mayor = int.MinValue;
+            int[] numeros = new int[43];
             int[] vector = new int[6];
             int[,] matriz = new int[3, 6];
             bool listo = false;
             for (int i = 0; i < 3; i++)
             {
                 for (int y = 0; y < vector.Length; y++)
-                    vector[y] = 0;
+                    vector[y] = -1;
                 Console.WriteLine("Ingrese Los 6 Numeros del Sorteo " + i + ": ");
                 for (int x = 0; x < 6; x++)
                 {
@@ -34,8 +37,21 @@ namespace ConsoleApp2
                 }
 
             }
-
-
+            for (int v = 0; v < 3; v++)
+            {
+                for (int x = 0; x < 6; x++)
+                {
+                    numeros[matriz[v, x]] = numeros[matriz[v, x]] + 1;
+                }
+            }
+            for(int i = 0; i<numeros.Length; i++)
+            {
+                if (numeros[i] > mayor)
+                {
+                    mayor = numeros[i];
+                    posi = i;
+                }
+            }
 
             for (int v = 0; v < 3; v++)
             {
@@ -45,7 +61,8 @@ namespace ConsoleApp2
                     Console.Write(matriz[v, x] + "\t");
                 }
             }
-
+            Console.WriteLine();
+            Console.WriteLine("El numero q mas se repite es: -"+posi+ "- Con "+mayor+" veces");
 
         }
     }
