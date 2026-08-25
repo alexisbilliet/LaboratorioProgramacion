@@ -1,0 +1,99 @@
+using System;
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        struct Direccion
+        {
+            public string calle;
+            public int numero;
+            public string localidad;
+        }
+        struct Alumno
+        {
+            public int legajo;
+            public string nombre;
+            public int edad;
+            public double nota;
+            public Direccion direccion;
+        }
+
+        static void Main(string[] args)
+        {
+            string localidadMayor = "";
+            int cantidadMayor = 0;
+            string aux = "";
+            double mayor = double.MinValue;
+            double menor = double.MaxValue;
+            double avg = 0;
+            int posi = 0;
+            int C = 0;
+            Alumno[] alumnos = new Alumno[2];
+            for (int i = 0; i < alumnos.Length; i++)
+            {
+                Console.WriteLine("        Alumno " + (i + 1));
+                Console.WriteLine("Ingrese el Numero de Legajo: ");
+                alumnos[i].legajo = int.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese el Nombre del Alumno: ");
+                alumnos[i].nombre = Console.ReadLine();
+                Console.WriteLine("Ingrese la Edad del Alumno: ");
+                alumnos[i].edad = int.Parse(Console.ReadLine());
+                if (alumnos[i].edad >= 18)
+                    C++;
+                Console.WriteLine("Ingrese la Nota del Alumno: ");
+                alumnos[i].nota = double.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese la Calle donde Vive el Alumno: ");
+                alumnos[i].direccion.calle = Console.ReadLine();
+                Console.WriteLine("Ingrese el Numero de Calle del Alumno: ");
+                alumnos[i].direccion.numero = int.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese la Localidad del Alumno: ");
+                alumnos[i].direccion.localidad = Console.ReadLine();
+                if (alumnos[i].nota > mayor)
+                {
+                    mayor = alumnos[i].nota;
+                    aux = alumnos[i].nombre;
+                }
+                if (alumnos[i].nota < menor)
+                {
+                    menor = alumnos[i].nota;
+                    posi = i;
+                }
+                avg += alumnos[i].nota;
+            }
+            for (int i = 0; i < alumnos.Length; i++)
+            {
+                int cantidad = 0;
+
+                for (int j = 0; j < alumnos.Length; j++)
+                {
+                    if (alumnos[i].direccion.localidad == alumnos[j].direccion.localidad)
+                    {
+                        cantidad++;
+                    }
+                }
+
+                if (cantidad > cantidadMayor)
+                {
+                    cantidadMayor = cantidad;
+                    localidadMayor = alumnos[i].direccion.localidad;
+                }
+
+            }
+
+            Console.WriteLine("El alumno con Mayor Nota es: "+aux);
+            Console.WriteLine("El promedio de Notas es de "+avg / alumnos.Length);
+            Console.WriteLine("Cantidad de Alumnos Mayores de Edad: "+ C);
+            Console.WriteLine("La Localidad con Mayor cantidad de Alumnos es: "+ localidadMayor);
+            Console.WriteLine("-------------------------------------------------------------------------------");
+            Console.WriteLine("El Legajo del Alumno con Menor nota es: "+ alumnos[posi].legajo);
+            Console.WriteLine("El Nombre del Alumno con Menor nota es: " + alumnos[posi].nombre);
+            Console.WriteLine("La Edad del Alumno con Menor nota es: " + alumnos[posi].edad);
+            Console.WriteLine("La Nota del Alumno con Menor nota es: " + alumnos[posi].nota);
+            Console.WriteLine("La Calle donde Vive el Alumno con Menor nota es: " + alumnos[posi].direccion.calle);
+            Console.WriteLine("El Numero de la Calle donde Vive el Alumno con Menor nota es: " + alumnos[posi].direccion.numero);
+            Console.WriteLine("La Localidad donde Vive el Alumno con Menor nota es: " + alumnos[posi].direccion.localidad);
+
+
+        }
+    }
+}
