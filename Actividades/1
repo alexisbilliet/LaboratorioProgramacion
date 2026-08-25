@@ -28,7 +28,7 @@ namespace ConsoleApp2
             double avg = 0;
             int posi = 0;
             int C = 0;
-            Alumno[] alumnos = new Alumno[2];
+            Alumno[] alumnos = new Alumno[5];
             for (int i = 0; i < alumnos.Length; i++)
             {
                 Console.WriteLine("        Alumno " + (i + 1));
