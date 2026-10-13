@@ -35,7 +35,8 @@ namespace ConsoleApp1
                 opcion = int.Parse(Console.ReadLine());
                 switch (opcion)
                 {
-                    case 1: 
+                    case 1:
+                        Console.Clear();
                         if (cantidad == cola.Length)
                             Console.WriteLine("No hay mas espacio.");
                         else
@@ -46,24 +47,26 @@ namespace ConsoleApp1
                             aux.Nombre = Console.ReadLine();
                             Console.WriteLine("Ingrese el Motivo de la Visita: ");
                             aux.Motivo = Console.ReadLine();
-                            final = (final + 1) % cola.Length; // Al usar %, cuando llegamos al final del array, el resultado vuelve a ser 0
+                            final = (final + 1) % cola.Length; 
                             cola[final] = aux;
                             cantidad++;
                             Console.WriteLine("Número encolado.");
 
                         }
                         break;
-                    case 2: // Desencolar
+                    case 2:
+                        Console.Clear();
                         if (cantidad == 0)
                             Console.WriteLine("La cola está vacía.");
                         else
                         {
-                            Console.WriteLine("Sale: " + cola[frente]);
-                            frente = (frente + 1) % cola.Length; // Al usar %, cuando llegamos al final del array, el resultado vuelve a ser 0
-                            cantidad--; // La cola ahora tiene un elemnto menos
+                            Console.WriteLine("Sale: " + cola[frente].Nombre);
+                            frente = (frente + 1) % cola.Length; 
+                            cantidad--; 
                         }
                         break;
-                    case 3: // Mostrar la cola
+                    case 3:
+                        Console.Clear();
                         if (cantidad == 0)
                             Console.WriteLine("La cola está vacía.");
                         else
@@ -71,7 +74,7 @@ namespace ConsoleApp1
                             Console.WriteLine("Elementos de la cola:");
                             for (int i = 0; i < cantidad; i++)
                             {
-                                int posicion = (frente + i) % cola.Length; // Calcula la posición de cada elemento, empezando por frente
+                                int posicion = (frente + i) % cola.Length;
                                 Console.WriteLine("------------------------------");
                                 Console.WriteLine("Nombre: "+cola[posicion].Nombre);
                                 Console.WriteLine("Motivo: " + cola[posicion].Motivo);
@@ -80,18 +83,28 @@ namespace ConsoleApp1
                         }
                         break;
                     case 4:
+                        Console.Clear();
                         if (cantidad == 0)
                             Console.WriteLine("La cola está vacía.");
-                        Console.WriteLine("El siguiente turno es: ");
-                        Console.WriteLine("------------------------------");
-                        Console.WriteLine("Nombre: " + cola[frente].Nombre);
-                        Console.WriteLine("Motivo: " + cola[frente].Motivo);
-                        Console.WriteLine("------------------------------");
+                        else
+                        {
+                            Console.WriteLine("El siguiente turno es: ");
+                            Console.WriteLine("------------------------------");
+                            Console.WriteLine("Nombre: " + cola[frente].Nombre);
+                            Console.WriteLine("Motivo: " + cola[frente].Motivo);
+                            Console.WriteLine("------------------------------");
+                        }
+                            
                         break;
                     case 5:
+                        Console.Clear();
                         if (cantidad == 0)
                             Console.WriteLine("La cola está vacía.");
-                        Console.WriteLine("La cantidad de Persnoas esperando es de: "+cantidad);
+                        else
+                        {
+                            Console.WriteLine("La cantidad de Persnoas esperando es de: " + cantidad);
+                        }
+                            
                         break;
                     default:
                         break;
